@@ -13,27 +13,27 @@ public class Aeronave extends Thread {
         this.view = view;
     }
 
-    // Método para simular as fases de decolagem
+   
     public void decolar() throws InterruptedException {
         Random random = new Random();
 
         // Fase de manobra
-        int tempoManobra = 300 + random.nextInt(400); // 300 a 700 ms
+        int tempoManobra = 300 + random.nextInt(400); 
         view.exibirFase(nome, "Manobra", tempoManobra);
         Thread.sleep(tempoManobra);
 
         // Fase de taxiar
-        int tempoTaxiar = 500 + random.nextInt(500); // 500 a 1000 ms
+        int tempoTaxiar = 500 + random.nextInt(500); 
         view.exibirFase(nome, "Taxiar", tempoTaxiar);
         Thread.sleep(tempoTaxiar);
 
         // Fase de decolagem
-        int tempoDecolagem = 600 + random.nextInt(200); // 600 a 800 ms
+        int tempoDecolagem = 600 + random.nextInt(200); 
         view.exibirFase(nome, "Decolagem", tempoDecolagem);
         Thread.sleep(tempoDecolagem);
 
         // Fase de afastamento
-        int tempoAfastamento = 300 + random.nextInt(500); // 300 a 800 ms
+        int tempoAfastamento = 300 + random.nextInt(500); 
         view.exibirFase(nome, "Afastamento", tempoAfastamento);
         Thread.sleep(tempoAfastamento);
 
