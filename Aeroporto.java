@@ -23,20 +23,20 @@ public class Aeroporto {
         for (Aeronave aeronave : aeronaves) {
             new Thread(() -> {
                 try {
-                    // Permite que até 2 aviões circulem pela área de decolagem ao mesmo tempo
+                    
                     semaforoDecolagem.acquire();
 
-                    // Determina a pista (norte ou sul)
+                    
                     int indicePista = aeronave.getPista().equals("Norte") ? 0 : 1;
-                    pistas[indicePista].acquire(); // Apenas uma aeronave por pista
+                    pistas[indicePista].acquire(); 
 
-                    // Executa a decolagem
+                    
                     view.exibirIniciarDecolagem(aeronave.getName(), aeronave.getPista());
                     aeronave.start();
-                    aeronave.join(); // Espera a aeronave concluir a decolagem
+                    aeronave.join();
 
-                    pistas[indicePista].release(); // Libera a pista
-                    semaforoDecolagem.release();   // Libera a área de decolagem
+                    pistas[indicePista].release(); 
+                    semaforoDecolagem.release();   
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
