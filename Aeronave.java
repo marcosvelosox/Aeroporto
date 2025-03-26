@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Aeronave extends Thread {
     private String nome;
-    private String pista;;
+    private String pista;
     private View view;
     
     public Aeronave(String nome, String pista, View view) {
