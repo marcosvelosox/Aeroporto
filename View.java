@@ -1,3 +1,4 @@
+//Classe view
 package aeroporto;
 
 public class View {
